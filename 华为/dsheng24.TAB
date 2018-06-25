@@ -1,0 +1,12 @@
+!table
+!version 300
+!charset WindowsSimpChinese
+
+Definition Table
+  File "dsheng24.bmp"
+  Type "RASTER"
+  (110.00285,39.8158) (419,297) Label "Pt 1",
+  (109.9995,39.8) (410,521) Label "Pt 3",
+  (110.0125,39.8112) (531,360) Label "Pt 4"
+  CoordSys Earth Projection 1, 0
+  Units "degree"
