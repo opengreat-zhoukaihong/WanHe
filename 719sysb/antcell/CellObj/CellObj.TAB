@@ -1,0 +1,74 @@
+!table
+!version 300
+!charset WindowsSimpChinese
+
+Definition Table
+  Type NATIVE Charset "WindowsSimpChinese"
+  Fields 67
+    Cell_name Char (21) ;
+    Bs_no Char (10) ;
+    Ci Char (5) ;
+    Arfcn Decimal (3, 0) ;
+    Bsic Decimal (3, 0) ;
+    Bearing Decimal (3, 0) ;
+    Lac Decimal (5, 0) ;
+    Non_bcch Char (64) ;
+    Downtilt Decimal (3, 0) ;
+    Max_tx_bts Char (2) ;
+    Ant_heigh Char (3) ;
+    Max_tx_ms Char (2) ;
+    Ant_gain Char (3) ;
+    Ant_type Char (15) ;
+    Time Char (8) ;
+    Lon Decimal (12, 6) ;
+    Lat Decimal (12, 6) ;
+    Basetype Char (1) ;
+    Length Char (5) ;
+    Ncell1 Char (10) ;
+    Ncell2 Char (10) ;
+    Ncell3 Char (10) ;
+    Ncell4 Char (10) ;
+    Ncell5 Char (10) ;
+    Ncell6 Char (10) ;
+    Ncell7 Char (10) ;
+    Ncell8 Char (10) ;
+    Ncell9 Char (10) ;
+    Ncell10 Char (10) ;
+    Ncell11 Char (10) ;
+    Ncell12 Char (10) ;
+    Ncell13 Char (10) ;
+    Ncell14 Char (10) ;
+    Ncell15 Char (10) ;
+    Ncell16 Char (10) ;
+    Lon_1 Decimal (12, 6) ;
+    Lat_1 Decimal (12, 6) ;
+    Lon_2 Decimal (12, 6) ;
+    Lat_2 Decimal (12, 6) ;
+    Lon_3 Decimal (12, 6) ;
+    Lat_3 Decimal (12, 6) ;
+    Lon_4 Decimal (12, 6) ;
+    Lat_4 Decimal (12, 6) ;
+    Lon_5 Decimal (12, 6) ;
+    Lat_5 Decimal (12, 6) ;
+    Lon_6 Decimal (12, 6) ;
+    Lat_6 Decimal (12, 6) ;
+    Lon_7 Decimal (12, 6) ;
+    Lat_7 Decimal (12, 6) ;
+    Lon_8 Decimal (12, 6) ;
+    Lat_8 Decimal (12, 6) ;
+    Lon_9 Decimal (12, 6) ;
+    Lat_9 Decimal (12, 6) ;
+    Lon_10 Decimal (12, 6) ;
+    Lat_10 Decimal (12, 6) ;
+    Lon_11 Decimal (12, 6) ;
+    Lat_11 Decimal (12, 6) ;
+    Lon_12 Decimal (12, 6) ;
+    Lat_12 Decimal (12, 6) ;
+    Lon_13 Decimal (12, 6) ;
+    Lat_13 Decimal (12, 6) ;
+    Lon_14 Decimal (12, 6) ;
+    Lat_14 Decimal (12, 6) ;
+    Lon_15 Decimal (12, 6) ;
+    Lat_15 Decimal (12, 6) ;
+    Lon_16 Decimal (12, 6) ;
+    Lat_16 Decimal (12, 6) ;

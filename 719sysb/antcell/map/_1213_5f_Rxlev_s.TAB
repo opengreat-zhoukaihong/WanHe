@@ -1,0 +1,31 @@
+!table
+!version 500
+!charset WindowsSimpChinese
+
+Definition Table
+  File "_1213_5f_rxlev_s.mig"
+  Type "RASTER"
+  (113.57025,22.252867) (0,0) Label "",
+  (113.580083,22.252867) (258,0) Label "",
+  (113.580083,22.2458) (258,200) Label "",
+  (113.57025,22.2458) (0,200) Label ""
+  CoordSys Earth Projection 1, 0
+  Units "degree"
+  RasterStyle 6 1
+begin_metadata
+"\Interpolator" = "IDW"
+"\Interpolator\Version" = "100"
+"\Interpolator\Parameter" = ""
+"\Interpolator\Parameter\EXPONENT" = "2"
+"\Interpolator\Parameter\MAX POINTS" = "25"
+"\Interpolator\Parameter\MIN POINTS" = "1"
+"\Interpolator\Parameter\SEARCH RADIUS" = "100"
+"\Interpolator\Source Data" = ""
+"\Interpolator\Source Data\Table" = "H:\岳嵩\公用目录\珠海典型数据\吉大\1213_5f.TAB"
+"\Interpolator\Source Data\Table\Is Permanent" = "TRUE"
+"\Interpolator\Source Data\Expression" = "Rxlev_s"
+"\Interpolator\Source Data\Grid Coordsys" = "CoordSys Earth Projection 1, 0"
+"\Interpolator\Source Data\Clip Table" = "C:\MY DOCUMENTS\ANTCELL\map\dd.TAB"
+"\Interpolator\Source Data\Clip Table\Is Permanent" = "TRUE"
+"\IsReadOnly" = "FALSE"
+end_metadata

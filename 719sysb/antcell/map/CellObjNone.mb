@@ -1,0 +1,53 @@
+Include "MAPBASIC.DEF"
+type point
+   x As Float
+   y As Float
+end type
+
+dim myobj,mobj,null,oobj AS object
+dim myyobj AS object
+dim   i,j,k,l   As integer
+dim   ty  As Float
+Dim  pp As Point
+Dim fillcolor  As Brush
+
+
+
+
+Browse * From CellObj 
+Create Map For CellObj CoordSys Earth Projection 1, 0
+ 
+Set Style Pen MakePen(1, 4, RGB(100,100,100)) 
+Set Style Brush MakeBrush(1, RGB(255,255,255), -1)
+ i = 0 
+ Fetch First From CellObj 
+  Do While Not EOT(CellObj) 
+    i = i + 1 
+    Create Region Into Variable myObj 0 
+    j=0
+    ty= CellObj.col(36)
+
+    Do while  ty<> 0
+     pp.x=CellObj.col(36+j*2)
+     pp.y=CellObj.col(36+j*2+1)
+     alter Object  myobj 
+              Node Add (pp.x,pp.y)
+            
+     j=j+1
+     ty=CellObj.col(36+j*2)
+    Loop 
+
+    
+
+    if Area(myobj,"sq km")>0 then   
+    Update CellObj
+       set obj=myobj
+       where Rowid=i
+   end if 
+ dd:
+   Fetch Next From CellObj
+ Loop 
+
+commit table cellobj
+
+
