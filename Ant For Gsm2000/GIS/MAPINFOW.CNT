@@ -1,0 +1,19 @@
+:Base MapInfow.hlp
+:Title MapInfo帮助
+:Index MapInfo Help =MapInfow.hlp
+:Link Windows.hlp
+1 使用MapInfo
+2 新特性=What.sNew.
+2 按关键字或短语排列的任务列表=ListingofTasksbyKeywordorPhrase
+2 按拼音字母顺序排列的任务列表A-M=AlphabeticalListingofTasksA.M.174
+2 按拼音字母顺序排列的任务列表N-Z=AlphabeticalListingofTasksN.Z.342
+1 参考信息
+2 菜单命令=MenuCommands.4
+2 对话框描述=DialogBoxDescriptions
+2 按钮清单=ListingofButtons.125
+2 词汇表=GlossaryofTerms.690
+2 如何使用MapInfo帮助=InstructionsForUsingMapInfoHelp
+:include Prosrvad.cnt
+:include OC_MI.cnt
+:include Misupt.cnt
+:include MapShell.cnt

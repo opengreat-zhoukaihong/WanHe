@@ -1,0 +1,884 @@
+'---------------------------------------------------------------------------
+'** MapInfo version 4.0 menu and buttonpad defintions **********************
+'---------------------------------------------------------------------------
+
+'** SEND MAIL submenu ******************************************************
+Create Menu "发送邮件[&M]" As
+  "当前窗口[&C]..."
+   HelpMsg "把活动窗口作为图元文件发送."
+   calling 114,
+  "工作空间[&K]..."
+   HelpMsg "发送工作空间."
+   calling 115
+
+'** FILE menu **************************************************************
+Create Menu "文件[&F]" ID 1 As
+  "新建表[&N]...\tCtrl+N/W^N/Mn/XCtrl+n"
+    HelpMsg "创建一个新表."
+    calling 101,
+  "打开表[&O]...\tCtrl+O/W^O/Mo/XCtrl+o"
+    HelpMsg "打开一个或多个表."
+    calling 102,
+  "打开ODBC表[&D]..."
+    HelpMsg "打开一个ODBC表."
+    calling 116,
+  "打开工作空间[&W]...\tCtrl+A/W^A/Ma/XCtrl+a"
+    HelpMsg "打开一个现有的工作空间."
+    calling 108,
+  "(关闭表[&C]..."
+    HelpMsg "关闭一个或多个表."
+    calling 103,
+  "(全部关闭[&l]"
+    HelpMsg "关闭所有打开的表."
+    calling 104,
+  "(-",
+  "(保存表[&S]...\tCtrl+S/W^S/Ms/XCtrl+s"
+    HelpMsg "保存对表的改动."
+    calling 105,
+  "(另存为[&A]..."
+    HelpMsg "以新的名字,投影或格式保存表."
+    calling 106,
+  "(保存查询[&Q]..."
+    HelpMsg "将表保存为查询."
+	calling 117,
+  "保存工作空间[&K]..."
+    HelpMsg "把当前的状态保存为一个工作空间."
+    calling 109,
+  "另存窗口[&I]..."
+    HelpMsg "将活动窗口保存为位图或图元文件."
+    calling 609,
+  "(复原表[&R]..."
+    HelpMsg "放弃已进行的编辑,恢复为最近保存的版本."
+    calling 107,
+  "(-",
+  "运行MapBasic程序[&U]...\tCtrl+U/W^U/Mu/XCtrl+u"
+    HelpMsg "启动一个MapBasic应用程序."
+    calling 110,
+  "(-",
+  "页面设置[&T]..."
+    HelpMsg "选择及设置打印机."
+    calling 111,
+  "(打印[&P]...\tCtrl+P/W^P/Mp/XCtrl+p"
+    HelpMsg "打印窗口内容."
+    calling 112,
+  '* NOTE: if MAPI is not available, this menu item will be removed! *'
+  "(-",
+  "发送邮件[&M]" ID 23 As "发送邮件[&M]",
+  "($",   '*  MRU list; appears as separator, if filenames follow.
+  "(-",
+  "退出[&X]\tAlt+F4"
+    HelpMsg "退出 MapInfo."
+    calling 113
+
+'** EDIT menu **************************************************************
+Create Menu "编辑[&E]" ID 2 As
+  "撤消[&U]\tCtrl+Z/W^Z/Mz/XCtrl+z"
+   HelpMsg "撤消最近的操作."
+   calling 201,
+  "(-",
+  "剪切[&T]\tCtrl+X/W^X/Mx/XCtrl+x"
+   HelpMsg "把选中的文本或对象剪切到剪贴板上."
+   calling 202,
+  "复制[&C]\tCtrl+C/W^C/Mc/XCtrl+c"
+   HelpMsg "把选中的文本或对象复制到剪贴板上."
+   calling 203,
+  "粘贴[&P]\tCtrl+V/W^V/Mv/XCtrl+v"
+   HelpMsg "把剪贴板的内容复制到活动窗口中."
+   calling 204,
+  "清除[&A]\tDel"
+   HelpMsg "删除选中的文本和对象."
+   calling 205,
+  "只清除地图对象[&O]"
+   HelpMsg "删除表中的图形对象."
+   calling 206,
+  "(-",
+  "(!整形[&R]\tCtrl+R/W^R/Mr/XCtrl+r"
+   HelpMsg "通过移动,添加和删除节点来修改对象."
+   calling 1601,
+  "新建行[&N]\tCtrl+E/W^E/Me/XCtrl+e"
+   HelpMsg "在活动浏览窗口中添加一条记录."
+   calling 702,
+  "(-",
+  "获取信息[&I]...\tF7/W%118/Mi/XF7"
+   HelpMsg "显示选中对象的信息."
+   calling 207
+
+'** OBJECTS menu ***********************************************************
+Create Menu "对象[&O]" ID 14 As
+  "设置目标[&T]\tCtrl+T/W^T/Mt/XCtrl+t"
+   HelpMsg "设定选中对象为编辑目标."
+   calling 1610,
+  "清除目标[&R]"
+   HelpMsg "撤消当前编辑目标的设定."
+   calling 1611,
+  "(-",
+  "合并[&C]..."
+   HelpMsg "将分离的地图对象合并为一个对象."
+   calling 1605,
+  "分割[&S]..."
+   HelpMsg "使用选中的剪切对象分割目标."
+   calling 1612,
+  "擦除[&E]..."
+   HelpMsg "使用选定的擦除对象擦除目标."
+   calling 1613,
+  "擦除外部[&A]..."
+   HelpMsg "擦除目标中没有被选中的擦除对象覆盖的区域."
+   calling 1614,
+  "叠压节点[&O]"
+   HelpMsg "在目标与选中对象的交叉处,为目标增加节点."
+   calling 1615,
+  "(-",
+  "缓冲区[&B]..."
+   HelpMsg "围绕选中的对象创建一缓冲区."
+   calling 1606,
+  "平滑[S&]"
+   HelpMsg "把选中的折线平滑为曲线."
+   calling 1602,
+  "撤消平滑[&U]"
+   HelpMsg "把选中的折线恢复到未经平滑处理的状态."
+   calling 1603,
+  "(-",
+  "转换为区域[&G]"
+   HelpMsg "把选中的对象转换为区域."
+   calling 1607,
+  "转换为折线[&P]"
+   HelpMsg "把选中的对象转换为折线."
+   calling 1604
+
+'** QUERY menu *************************************************************
+Create Menu "查询[&Q]" ID 3 As
+  "选择[&S]..."
+   HelpMsg "通过查询来产生一个选择结果表."
+   calling 301,
+  "SQL 选择[&Q]..."
+   HelpMsg "通过SQL查询来产生一个选择结果表."
+   calling 302,
+  "全选[&A]"
+   HelpMsg "从地图/布局或浏览窗口中选中所有的对象/行."
+   calling 303,
+  "全不选[&U]"
+   HelpMsg "撤消从地图/布局或浏览窗口中所有对象/行的选中."
+    calling 304,
+  "(-",
+  "查找[&F]...\tCtrl+F/W^F/Mf/XCtrl+f"
+   HelpMsg "定位并标记单独的对象或地址."
+   calling 305,
+  "查找选中部分[&D]"
+   HelpMsg "选中一项/行并在所有的窗口中查找选中部分."
+   calling 306,
+  "(-",
+  "计算统计值[&C]..."
+   HelpMsg "计算表或选中部分中某列的统计值."
+   calling 309
+
+'** MAINTENANCE submenu ****************************************************
+Create Menu "维护[&M]" As
+  "表结构[&T]..."
+   HelpMsg "修改表结构."
+   calling 404,
+  "删除表[&D]..."
+   HelpMsg "删除一个表及其组成文件. "
+   calling 409,
+  "重命名表[&R]..."
+   HelpMsg "重命名一个表及其组成文件."
+   calling 410,
+  "紧缩表[&P]..."
+   HelpMsg "紧缩表,回收空间并去掉已删除的记录占用的空间."
+   calling 403,
+  "(-",
+  "使ODBC表可地图化[&M]..."
+  HelpMsg "在表中标识空间信息."
+  calling 415,
+  "改变ODBC表的符号[&C]..."
+  HelpMsg "改变一可地图化的ODBC表的符号."
+  calling 418,
+  "断开与ODBC表的连接[&U]..."
+  HelpMsg "使一ODBC表成为一MapInfo表."
+  calling 416,
+  "刷新ODBC表[&E]..."
+  HelpMsg "刷新ODBC表的内容."
+  calling 417
+
+'** RASTER submenu *********************************************************
+Create Menu "栅格图象[&R]" As
+  "调整图象样式[&A]..."
+   HelpMsg "调整栅格图象的颜色,对比度或亮度."
+   calling 414,
+  "(-",
+  "修改图象配准[&M]..."
+   HelpMsg "增加或编辑用以配准图象的控制点."
+   calling 413,
+  "从地图上选择控制点[&S]"
+   HelpMsg "在栅格图象上增加控制点."
+   calling 1730
+
+'** TABLE menu *************************************************************
+Create Menu "表[&A]" ID 15 As
+  "更新列[&U]..."
+   HelpMsg "创建临时列或修改现有的列."
+   calling 405,
+  "在表中添加行[&A]..."
+   HelpMsg "把一个表中的记录添加到另一表中."
+   calling 411,
+  "(-",
+  "地理编码[&G]..."
+   HelpMsg "把点对象分配给数据表中的行."
+   calling 407,
+  "创建点[&P]..."
+   HelpMsg "用X和Y坐标为一数据库创建点对象."
+   calling 408,
+  "用列合并对象[&C]..."
+   HelpMsg "用公共列合并对象."
+   calling 406,
+  "(-",
+  "转入[&I]..."
+   HelpMsg "转入矢量图形文件."
+   calling 401,
+  "转出[&E]..."
+   HelpMsg "把表以其它格式转出."
+   calling 402,
+  "(-",
+  "维护[&M]" As "维护[&M]",
+  "栅格图象[&R]" As "栅格图象[&R]"
+
+'** OPTIONS menu ***********************************************************
+Create Menu "选项[&P]" ID 5 As
+  "线样式[&L]...\tShift+F8/W#%119/XShift+F8"
+   HelpMsg "设定线对象的颜色,类型和宽度."
+   calling 501,
+  "区域样式[&R]...\tCtrl+F8/W^%119/XCtrl+F8"
+   HelpMsg "设定封闭对象的颜色,图案和边界."
+   calling 502,
+  "符号样式[&S]...\tAlt+F8/W@%119/XAlt+F8"
+   HelpMsg "设定符号的大小,颜色和类型."
+   calling 503,
+  "文本样式[&T]...\tF8/W%119/XF8"
+   HelpMsg "设定文本的颜色,字体和大小."
+   calling 504,
+  "(-",
+  "工具条[&B]..."
+   HelpMsg "显示或隐藏工具条."
+   calling 605,
+  "!隐藏图例窗口[&G]^显示图例窗口[&G]"
+   HelpMsg "显示或隐藏地图/统计图图例."
+   calling 606,
+  "!隐藏统计窗口[&I]^显示统计窗口[&I]"
+   HelpMsg "显示或隐藏统计窗口."
+   calling 607,
+  "!隐藏MapBasic窗口[&M]^显示MapBasic窗口[&M]"
+   HelpMsg "显示或隐藏MapBasic窗口."
+   calling 608,
+  "!隐藏状态条[&A]^显示状态条[&A]"
+   HelpMsg "显示或隐藏状态条."
+   calling 616,
+  "(-",
+  "自定义颜色[&C]..."
+   HelpMsg "自定义调色板."
+   calling 617,
+  "参数设置[&P]..."
+   HelpMsg "自定义MapInfo的显示和操作选项."
+   calling 208
+
+'** WINDOW menu ************************************************************
+Create Menu "窗口[&W]" ID 6 As
+  "新建浏览窗口[&B]\tF2/W%113/Mb/XF2"
+   HelpMsg "以表格形式显示和操作数据."
+   calling 601,
+  "新建地图窗口[&M]\tF3/W%114/Mm/XF3"
+   HelpMsg "以地图形式显示表."
+   calling 602,
+  "新建统计图窗口[&G]...\tF4/W%115/Mg/XF4"
+   HelpMsg "以统计图形式显示表."
+   calling 603,
+  "新建布局窗口[&L]...\tF5/W%116/XF5"
+   HelpMsg "为打印排列,注释窗口."
+   calling 604,
+  "新建重新分区窗口[&R]..."
+   HelpMsg "在重新分区窗口中显示和操作表."
+   calling 615,
+  "(-",
+  "重画窗口[&D]\tCtrl+D/W^D/Md/XCtrl+d"
+   HelpMsg "重画活动窗口."
+   calling 610,
+  "平铺窗口[&T]\tShift+F4/W#%115/XShift+F4"
+   HelpMsg "水平排列并调整窗口大小."
+   calling 611,
+  "层叠窗口[&C]\tShift+F5/W#%116/XShift+F5"
+   HelpMsg "垂直排列窗口并重定窗口大小."
+   calling 612,
+  "排列图标[&A]"
+   HelpMsg "排列最小化的窗口图标."
+   calling 613,
+   "(>"     ' list of windows; appears as separator if windows follow
+
+'** HELP menu **************************************************************
+Create Menu "帮助[&H]" ID 7 As
+  "MapInfo帮助主题[&H]"
+   HelpMsg "显示 MapInfo帮助主题."
+   calling 1203,
+  "(-",
+  "MSN上的MapInfo论坛[&F]..."
+   HelpMsg "连接MSN上的 MapInfo论坛."
+   calling 1209,
+  "&Web上的MapInfo..."
+   HelpMsg "连接World Wide Web上的MapInfo Home Page."
+   calling 1210,
+  "MapInfo 数据产品[&D]..."
+   HelpMsg "连接到Web上的MapInfo数据产品页面."
+   calling 1211,
+  "(-",
+  "关于 MapInfo[&A] "
+   HelpMsg "显示程序信息,MapInfo版本号以及版权声明."
+   Calling 1205
+
+'---------------------------------------------------------------------------
+'** WINDOW SPECIFIC MENUS **************************************************
+'---------------------------------------------------------------------------
+
+'** BROWSE menu ************************************************************
+Create Menu "浏览[&B]" ID 8 As
+  "选取字段[&P]..."
+   HelpMsg "选择在活动的浏览窗口中显示的字段."
+   calling 704,
+  "(-",
+  "选项[&O]..."
+   HelpMsg "显示或隐藏活动浏览窗口中的格线."
+   calling 703
+
+'** MAP menu ***************************************************************
+Create Menu "地图[&M]" ID 9 As
+  "图层控制[&L]...\tCtrl+L/W^L/Ml/XCtrl+l"
+   HelpMsg "管理地图的分层和显示."
+   calling 801,
+  "(-",
+  "创建专题地图[&T]..."
+   HelpMsg "分析和显示地图数据."
+   calling 307,
+  "修改专题地图[&M]..."
+   HelpMsg "修改专题地图."
+   calling 308,
+  "(-",
+  "改变视图[&V]..."
+   HelpMsg "设定地图的宽度,比例尺,大小和中心."
+   calling 805,
+  "副本视图[&N]"
+   HelpMsg "为活动视图显示一副本视图."
+   calling 811,
+  "前一视图[&P]"
+   HelpMsg "返回到地图的最近视图."
+   calling 806,
+  "查看整个图层[&E]..."
+   HelpMsg "显示单独的或所有地图的图层."
+   calling 807,
+  "(-",
+  "清除自定义标注[&C]..."
+   HelpMsg "放弃所有自定义标注并恢复为缺省状态."
+   calling 814,
+  "保存装饰对象[&S]..."
+   HelpMsg "把装饰图层中的对象保存在一表中."
+   calling 809,
+  "清除装饰图层[&Y]"
+   HelpMsg "清除装饰图层中的所有对象."
+   calling 810,
+  "(-",
+  "设置裁剪区域[&G]"
+   HelpMsg "定义裁剪视图区域."
+   calling 812,
+  "!打开裁剪区域[&R]^关闭裁剪区域[&R]"
+   HelpMsg "打开或关闭裁剪区域."
+   calling 813,
+  "(-",
+  "数字化仪设置[&Z]..."
+   HelpMsg "为MapInfo配置数字化仪."
+   calling 803,
+  "选项[&O]..."
+   HelpMsg "设定地图坐标,距离和面积单位."
+   calling 802
+
+'** LAYOUT menu ************************************************************
+Create Menu "布局[&L]" ID 10 As
+  "改变缩放比例[&Z]..."
+   HelpMsg "设定一个活动布局窗口的缩放比例."
+   calling 902,
+  "以实际尺寸显示[&S]"
+   HelpMsg "以打印时的尺寸显示布局对象."
+   calling 903,
+  "查看整个布局[&E]"
+   HelpMsg "显示布局窗口中的所有页."
+   calling 904,
+  "前一视图[&P]"
+   HelpMsg "返回到布局的最近视图."
+   calling 905,
+  "(-",
+  "置前[&F]"
+   HelpMsg "把选定对象显示在其它对象之前."
+   calling 906,
+  "置后[&B]"
+   HelpMsg "把选定对象移到其它对象之后."
+   calling 907,
+  "(-",
+  "(排列对象[&A]..."
+   HelpMsg "相互参照或参照布局窗口框架排列布局对象."
+   calling 908,
+  "创建阴影[&C]..."
+   HelpMsg "在布局窗口框架或选中对象之后生成一个阴影."
+   calling 909,
+  "(-",
+  "选项[&O]..."
+   HelpMsg "配置布局窗口框架及其内容的显示."
+   calling 901
+
+'** GRAPH menu *************************************************************
+Create Menu "统计图[&G]" ID 11 As
+  "统计图类型[&T]..."
+   HelpMsg "选择一个统计图类型并设定它的相关选项."
+   calling 1001,
+  "标注轴[&L]..."
+   HelpMsg "自定义统计图标注轴."
+   calling 1002,
+  "数值轴[&V]..."
+   HelpMsg "自定义统计图数值轴."
+   calling 1003,
+  "序列[&S]..."
+   HelpMsg "自定义统计图的外观."
+   calling 1004
+
+'** MAPBASIC menu **********************************************************
+Create Menu "&MapBasic" ID 12 As
+  "清除内容[&C]"
+   HelpMsg "清除MapBasic窗口."
+   calling 1101,
+  "保存内容[&S]..."
+   HelpMsg "保存MapBasic窗口中的内容."
+   calling 1102
+
+'** REDISTRICT menu ********************************************************
+Create Menu "重新分区[&R]" ID 13 As
+  "(分配选中的对象[&s]"
+    HelpMsg "永久地把选定对象分配到目标分区."
+    Calling 705,
+  "(从地图上设定目标分区[&T]"
+    HelpMsg "设置选中对象的分区为目标分区."
+    Calling 706,
+  "(-",
+  "(增加分区[&A]"
+    HelpMsg "向分区浏览窗口中加入一个新的分区."
+    Calling 707,
+  "(删除目标分区[&D]"
+    HelpMsg "从分区浏览窗口中删除当前的目标分区."
+    Calling 708,
+  "(-",
+  "选项[&O]..."
+    HelpMsg "设置分区的顺序和显示格线类型."
+    Calling 709
+
+'---------------------------------------------------------------------------
+'** Some menus not used, but provided for 2.x MapBasic Apps for ************
+'** backwards compatibility ************************************************
+'---------------------------------------------------------------------------
+Create Menu "分析[&A]" As
+  "选择[&S]..." calling 301,
+  "SQL选择[&Q]..." calling 302,
+  "全选[&A]" calling 303,
+  "全不选[&U]" calling 304,
+  "(-",
+  "查找[&F]...\tCtrl+F/W^F/Mf/XCtrl+f" calling 305,
+  "查找选中部分[&D]" calling 306,
+  "(-",
+  "按值渲染[&V]..." calling 307,
+  "自定义图例[&C]..." calling 308,
+  "(-",
+  "计算统计值[&L]..." calling 309
+Create Menu "样式[&S]" As
+  "线样式[&L]...\tShift+F8/W#%119" calling 501,
+  "区域样式[&R]...\tCtrl+F8/W^%119" calling 502,
+  "符号样式[&S]...\tAlt+F8/W@%119" calling 503,
+  "文本样式[&T]...\tF8/W%119" calling 504
+Create Menu "工具[&T]" ID 4 As
+  "工具管理器[&T]..." 
+  HelpMsg "设置MapInfo启动时自动运行的MapBasic工具."
+  calling 1801
+
+'---------------------------------------------------------------------------
+'** SHORTCUT menus for the various window types ****************************
+'---------------------------------------------------------------------------
+
+Create Menu "DefaultShortcut" ID 16 As
+  "撤消[&U]" calling 201,
+  "(-",
+  "剪切[&T]" calling 202,
+  "复制[&U]" calling 203,
+  "粘贴[&P]" calling 204
+
+Create Menu "MapperShortcut" ID 17 As
+  "图层控制[&L]..."
+   HelpMsg "打开图层控制对话框"
+   calling 801,
+  "(-",
+  "!关闭自动滚屏[&T]^打开自动滚屏[&A]"
+   HelpMsg "打开或关闭活动地图窗口的自动滚屏"
+   calling 815,
+  "(-",
+  "清除装饰图层[&Y]"
+   HelpMsg "清除装饰图层中的所有对象."
+   calling 810,
+  "(-",
+  "改变视图[&V]..."
+   HelpMsg "设定地图的宽度,比例尺,大小和中心."
+   calling 805,
+  "副本视图[&N]"
+   HelpMsg "为活动地图显示一副本视图."
+   calling 811,
+  "前一视图[&P]"
+   HelpMsg "返回到地图的最近视图."
+   calling 806,
+  "查看整个图层[&E]..." 
+   HelpMsg "显示单独的或所有地图的图层."
+   calling 807,
+  "(-",
+  "编辑对象" as "对象[&O]",
+  "(-",
+  "获取信息[&I]...\tF7/W%118/Mi/XF7"
+   HelpMsg "显示选中对象的信息."
+   calling 207
+
+Create Menu "BrowserShortcut" ID 18 As
+  "新建行[&N]\tCtrl+E/W^E/Me/XCtrl+e"
+   HelpMsg "在活动浏览窗口中添加一条记录."
+   calling 702,
+  "(-",
+  "选取字段[&P]..." 
+   HelpMsg "选择在活动窗口中显示的字段."
+   calling 704
+
+Create Menu "LayoutShortcut" ID 19 As
+  "改变缩放比例[&Z]..."
+   HelpMsg "设定一个活动布局窗口的缩放比例."
+   calling 902,
+  "以实际尺寸显示[&S]"
+   HelpMsg "以打印时的尺寸显示布局对象."
+   calling 903,
+  "查看整个布局[&E]"
+   HelpMsg "显示布局窗口中的所有页."
+   calling 904,
+  "前一视图[&P]"
+   HelpMsg "返回到布局的最近视图."
+   calling 905,
+  "(-",
+  "置前[&F]"
+   HelpMsg "把选定对象显示在其他对象之前."
+   calling 906,
+  "置后[&B]"
+   HelpMsg "把选定对象移到其他对象之后."
+   calling 907,
+  "(-",
+  "(排列对象[&A]..."
+   HelpMsg "相互参照或参照布局窗口框架排列布局对象."
+   calling 908,
+  "创建阴影[&C]..."
+   HelpMsg "在布局窗口框架或选定对象之后生成一个阴影."
+   calling 909,
+  "(-",
+  "!关闭自动滚屏[&T]^打开自动滚屏[&A]"
+   HelpMsg "打开或关闭活动布局窗口的自动滚屏"
+   calling 910
+
+
+Create Menu "GrapherShortcut" ID 20 As
+  "统计图类型[&T]..."
+   HelpMsg "选择一个统计图类型并设定它的相关选项."
+   calling 1001,
+  "标注轴[&L]..."
+   HelpMsg "自定义统计图标注轴."
+   calling 1002,
+  "数值轴[&V]..."
+   HelpMsg "自定义统计图数值轴."
+   calling 1003,
+  "序列[&S]..."
+   HelpMsg "自定义统计图的外观."
+   calling 1004
+   
+Create Menu "CmdShortcut" ID 21 As
+  "撤消" calling 201,
+  "(-",
+  "剪切" calling 202,
+  "复制" calling 203,
+  "粘贴" calling 204
+
+
+Create Menu "RedistrictShortcut" ID 22 As
+  "(分配选中的对象[&s]"
+    HelpMsg "永久地把选定对象分配到目标分区."
+    Calling 705,
+  "(从地图上设定目标分区[&T]"
+    HelpMsg "设置选定对象的分区为目标分区."
+    Calling 706,
+  "(-",
+  "(增加分区[&A]"
+    HelpMsg "向分区浏览器中加入一个新的分区."
+    Calling 707,
+  "(删除目标分区[&D]"
+    HelpMsg "从分区浏览器中删除当前的目标分区."
+    Calling 708
+
+'---------------------------------------------------------------------------
+'** BUTTON PADS ************************************************************
+'---------------------------------------------------------------------------
+
+Create ButtonPad "工具" ID 3 As
+  PushButton
+    Icon 32
+    Calling 110
+    HelpMsg "启动一个MapBasic应用程序.\n运行MapBasic程序"
+  ToggleButton
+    Icon 33
+    Calling 608
+    HelpMsg "显示或隐藏MapBasic窗口.\n显示/隐藏MapBasic窗口"
+  Hide
+  Width 2
+
+Create ButtonPad "绘图" ID 2 As
+  ToolButton
+    Icon 16
+    Calling 1711
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一个符号点.\n符号"
+  ToolButton
+    Icon 17
+    Calling 1712
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一条直线.\n直线"
+  ToolButton
+    Icon 18
+    Calling 1713
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一条折线.\n折线"
+  ToolButton
+    Icon 19
+    Calling 1716
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一条圆弧.\n圆弧"
+  ToolButton
+    Icon 20
+    Calling 1714
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一个多边形.\n多边形"
+  ToolButton
+    Icon 21
+    Calling 1715
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一个椭圆.\n椭园"
+  ToolButton
+    Icon 22
+    Calling 1717
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一个矩形/正方形.\n矩形"
+  ToolButton
+    Icon 23
+    Calling 1718
+    HelpMsg "在一个可编辑的地图或活动的布局窗口中画一个圆角矩形/正方形.\n圆角矩形"
+  ToolButton
+    Icon 24
+    Calling 1709
+    HelpMsg "向地图/布局中添加文本或编辑浏览窗口的数据\n文本"
+  ToolButton
+    Icon 25
+    Calling 1719
+   HelpMsg "插入一个布局框架.\n框架"
+  Separator
+  ToggleButton
+    Icon 26
+    Calling 1601
+    HelpMsg "打开或关闭整形模式.\n整形"
+  ToolButton
+    Icon 27
+    Calling 1723
+    HelpMsg "向一个区域,折线或直线中增加一个节点.\n加节点"
+  Separator
+  PushButton
+    Icon 28
+    Calling 503
+    HelpMsg "设定符号的大小,颜色和类型.\n符号样式"
+  PushButton
+    Icon 29
+    Calling 501
+    HelpMsg "设定线的颜色,类型和宽度.\n线样式"
+  PushButton
+    Icon 30
+    Calling 502
+    HelpMsg "设定封闭对象的颜色,类型和轮廓.\n区域样式"
+  PushButton
+    Icon 31
+    Calling 504
+    HelpMsg "设定文本的颜色,字体和大小.\n文本样式"
+  Show
+  Width 2
+
+Create ButtonPad "主" ID 1 As
+  ToolButton
+    Icon 0
+    Calling 1701
+    HelpMsg "选择一个或多个地图/布局对象或浏览记录.\n选择"
+  ToolButton
+    Icon 1
+    Calling 1722
+    HelpMsg "选择矩形中的地图对象.\n矩形选择"
+ ToolButton
+    Icon 2
+    Calling 1703
+    HelpMsg "选择圆中的地图对象.\n半径选择"
+  ToolButton
+    Icon 3
+    Calling 1704
+    HelpMsg "选择边界中的地图对象.\n边界选择"
+  Separator
+  ToolButton
+    Icon 4
+    Calling 1705
+    HelpMsg "显示放大的地图或布局.\n放大"
+  ToolButton
+    Icon 5
+    Calling 1706
+    HelpMsg "显示缩小的地图或布局.\n缩小"
+  PushButton
+    Icon 6
+    Calling 805
+    HelpMsg "设定地图的宽度,比例,大小和中心.\n改变视图"
+  ToolButton
+    Icon 7
+    Calling 1702
+    HelpMsg "重新设定地图或布局在窗口中的位置.\n漫游器"
+  Separator
+  ToolButton
+    Icon 8
+    Calling 1707
+    HelpMsg "显示有关地图对象的表格信息.\n信息"
+  ToolButton
+    Icon 9
+    Calling 1708
+    HelpMsg "用相关数据库的信息标注地图对象.\n标注"
+  ToolButton
+    Icon 37
+    Calling 1734
+    HelpMsg "把整个地图的内容拖动到MapInfo或其他应用程序中.\n拖动地图窗口"
+  Separator
+  PushButton
+    Icon 10
+    Calling 801
+    HelpMsg "管理地图分层和显示.\n图层控制"
+  ToolButton
+    Icon 11
+    Calling 1710
+    HelpMsg "显示地图两点之间的距离.\n标尺"
+  Separator
+  ToggleButton
+    Icon 12
+    Calling 606
+    HelpMsg "显示/隐藏地图或统计图的图例.\n显示/隐藏图例"
+  ToggleButton
+    Icon 13
+    Calling 607
+    HelpMsg "显示隐藏统计窗口.\n显示/隐藏统计窗口"
+  Separator
+  PushButton
+    Icon 187
+    Calling 706
+    HelpMsg "把选中对象的分区设置为目标.\n设置目标分区"
+  PushButton
+    Icon 188
+    Calling 705
+    HelpMsg "永久地把选定对象分配到分区.\n分配选定对象"
+  Separator
+  ToggleButton
+    Icon 35
+    Calling 813
+    HelpMsg "设置地图裁剪开关.\n裁剪区域开/关"
+  PushButton
+    Icon 36
+    Calling 812
+    HelpMsg "设置裁剪区域.\n设置裁剪区域"
+  Show
+  Width 2
+
+Create ButtonPad "常用" ID 4 as
+  PushButton Icon 38
+    calling 101
+    HelpMsg "创建新表.\n新建表"
+  PushButton Icon 39
+    calling 102
+    HelpMsg "打开一现有的表.\n打开表"
+  PushButton Icon 40
+    calling 105
+    HelpMsg "保存对表的改动.\n保存表"
+  Separator
+  PushButton Icon 41
+    calling 112
+    HelpMsg "打印窗口内容.\n打印窗口"
+  Separator
+  Pushbutton Icon 42
+    calling 202
+    HelpMsg "把选中的文本和对象剪切到剪贴板.\n剪切"
+  Pushbutton Icon 43
+    calling 203
+    HelpMsg "把选中的文本和对象复制到剪贴板.\n复制"
+  Pushbutton Icon 44
+    calling 204
+    HelpMsg "把剪贴板上的内容复制到当前活动窗口.\n粘贴"
+  Separator
+  PushButton Icon 45
+    calling 201
+    HelpMsg "撤消最近的编辑.\n撤消"
+  Separator
+  PushButton Icon 175
+    calling 601
+    HelpMsg "以表格形式显示和操作数据.\n新建浏览窗口"
+  PushButton Icon 176
+    calling 602
+    HelpMsg "以地图形式显示表.\n新建地图窗口"
+  PushButton Icon 177
+    calling 603
+    HelpMsg "以统计图形式显示表.\n新建统计图窗口"
+  PushButton Icon 178
+    calling 604
+    HelpMsg "为打印排列/注释窗口.\n新建布局窗口"
+  PushButton Icon 179
+    calling 615
+    HelpMsg "在重新分区窗口中显示和操作表.\n新建重分区窗口"
+  Separator
+  PushButton Icon 46
+    calling 1207
+    HelpMsg "获取有关某窗口的帮助.\n帮助"  
+  Fixed
+  Show
+
+Create ButtonPad "ODBC" ID 5 As
+  PushButton
+    Icon 321
+    Calling 116
+    HelpMsg "打开一个ODBC表.\n打开ODBC表"
+  PushButton
+    Icon 322
+    Calling 417
+    HelpMsg "刷新一个ODBC表.\n刷新ODBC表"
+  PushButton
+    Icon 323
+    Calling 416
+    HelpMsg "断开与ODBC表的连接.\n中断连接ODBC表"
+  PushButton
+    Icon 324
+    Calling 415
+    HelpMsg "使一个ODBC表可地图化.\n使ODBC表可地图化"
+  PushButton
+    Icon 325
+    Calling 418
+    HelpMsg "改变一个可地图化的ODBC表的符号.\n改变可地图化ODBC表的符号" 
+  Width 5
+
+'--------------------------------------------------------------------------
+'** MENU BAR ***************************************************************
+'---------------------------------------------------------------------------
+Create Menu Bar As
+    "文件[&F]",
+    "编辑[&E]",
+    "工具[&T]",
+    "对象[&O]",
+    "查询[&Q]",
+    "表[&A]",
+    "选项[&P]",
+    "WinSpecific",
+    "窗口[&W]",
+    "帮助[&H]"
+

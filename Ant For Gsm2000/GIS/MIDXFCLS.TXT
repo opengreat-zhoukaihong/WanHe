@@ -1,0 +1,8 @@
+# MIDXFCLS.TXT
+# Contents of this file are inserted into the CLASSES SECTION of exported DXF files.
+  0
+SECTION
+  2
+CLASSES
+  0
+ENDSEC

@@ -1,0 +1,3 @@
+@ECHO OFF
+ECHO Copying Files...
+xcopy32 "Gis\." "C:\Gis" /E/I

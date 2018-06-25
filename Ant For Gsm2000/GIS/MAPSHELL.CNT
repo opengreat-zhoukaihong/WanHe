@@ -1,0 +1,17 @@
+:Base MapShell.hlp
+:Title MapInfo地图帮助
+:Index MapInfo Map Help =MapShell.hlp
+:Link Windows.hlp
+1 MapInfo地图概述
+2 使用Mapinfo地图=WhatIsMapInfoMap.
+2 OLE 术语=OLETerms
+2 为什么使用MapInfo地图=WhyUseMapInfoMap
+2 使用MapInfo地图
+3 嵌入MapInfo地图=EmbeddingAMapInfoMap
+3 改变大小和重新定位=ResizingAndRepositioning
+3 保存MapInfo地图=SavingYourMapInfoMap
+1 MapInfo地图参考信息
+3 按字母顺序列出MapInfo地图的任务=MapInfoMapAlphabeticalListingofTasks
+3 MapInfo地图命令菜单=MapInfoMapMenuCommands.4
+3 对话框描述=MapInfoMapDialogBoxDescriptions
+3 MapInfo地图按钮=MapInfoMapButtons

@@ -1,0 +1,30 @@
+:Base OC_MI.hlp
+:Title Microsoft Office 97兼容性帮助
+:Index Microsoft Office 97 Compatible Help =OC_MI.hlp
+:Link Windows.hlp
+1 Microsoft Office 97兼容性
+2 Microsoft Office 97兼容程序=MicrosoftOffice97CompatibleProgram
+2 MapInfo和Office 97的兼容特性
+3 包括在MapInfo中的Office 97兼容特性
+3 智能鼠标=IntelliMouse
+3 HTML支持=HTML
+3 快捷菜单=ShortcutMenus
+3 拖放=DragandDrop
+3 使用MapInfo地图进行对象的链接与嵌入 =OLEEmbeddingUsingMapInfoMap
+3 窗口注册支持=WindowsRegistrySupport
+3 常用工具条=StandardToolbar
+3 码放工具条=DockableToolbars
+3 简单邮件可用支持=SimpleMailEnablingSupport
+3 长文件名/UNC支持=LongFilename.UNCSupport
+3 安装/删除安装程序=Installer.Uninstaller
+3 对Office 97兼容特性的改变
+3 拖放的改变=DragandDropChanges
+3 如何使用主要的Office兼容特性
+3 使用智能鼠标=UsingIntelliMouse
+3 显示快捷菜单=DisplayingShortcutMenus
+3 使用工具提示=UsingTooltips
+3 使用拖放=UsingDragandDrop
+3 使用码放工具条=UsingDockableToolbars
+3 使用简单邮件可用支持=UsingSimpleMailEnablingSupport
+2 和Microsoft Office一起使用MapInfo
+3 在Microsoft应用程序中放置地图=PlacingAMapIntoAMicrosoftApplication
